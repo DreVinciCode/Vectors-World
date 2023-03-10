@@ -137,8 +137,8 @@ PlayerSettings:
   bundleVersion: 0.1
   preloadedAssets:
   - {fileID: 2087794387620556314, guid: 856158b07b7715d46ab8f55bdb061c7f, type: 2}
-  - {fileID: 5290472926861784269, guid: a7fa27ffca306d7498f13d618378bf9b, type: 2}
   - {fileID: 5800259847689460653, guid: 86931748f78fc4b4a85cb43d9358a62d, type: 2}
+  - {fileID: 5290472926861784269, guid: a7fa27ffca306d7498f13d618378bf9b, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -644,6 +644,7 @@ PlayerSettings:
     WindowsStoreApps:
       GazeInput: True
       InternetClient: True
+      WebCam: True
       Microphone: True
   metroTargetDeviceFamilies: {}
   metroFTAName: 
