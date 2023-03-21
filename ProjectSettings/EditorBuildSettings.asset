@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main.unity
-    guid: 8ba09a53ad521fa418acf929048c3e4d
+    path: Assets/Scenes/Main Scene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects:
-    Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 856158b07b7715d46ab8f55bdb061c7f, type: 2}
-    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 86931748f78fc4b4a85cb43d9358a62d, type: 2}
-    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: a7fa27ffca306d7498f13d618378bf9b, type: 2}
+    Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: b38ce1a9efb6059409f254fa0a4b174c, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 43c73dd4c20789847a6d87ba0dab31fb, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 6634dfa800b54ee4abbd1b69b42e5795, type: 2}
