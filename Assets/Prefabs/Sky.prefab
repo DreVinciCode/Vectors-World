@@ -44,6 +44,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cloud1
       objectReference: {fileID: 0}
+    - target: {fileID: 1507556445416078, guid: 35c1760d408159b42a1eb7a1fe581f67, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4444016999086382, guid: 35c1760d408159b42a1eb7a1fe581f67, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -106,6 +110,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cloud2
       objectReference: {fileID: 0}
+    - target: {fileID: 1719932964490678, guid: 28a9758cf6c921848b46b5fe36122baf, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4028110577583062, guid: 28a9758cf6c921848b46b5fe36122baf, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -167,6 +175,10 @@ PrefabInstance:
     - target: {fileID: 1983022887720352, guid: 925bae0963c055b4bbc736557200698c, type: 3}
       propertyPath: m_Name
       value: Sun
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983022887720352, guid: 925bae0963c055b4bbc736557200698c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4852425190605606, guid: 925bae0963c055b4bbc736557200698c, type: 3}
       propertyPath: m_RootOrder
