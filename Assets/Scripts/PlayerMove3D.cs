@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerMove3D : MonoBehaviour
 {
-    //Animator anim; 
     Rigidbody rb;
     public Transform cam;
 
@@ -14,7 +13,6 @@ public class PlayerMove3D : MonoBehaviour
 
     void Start()
     {
-        //anim = gameObject.GetComponentInChildren<Animator>(); 
         rb = gameObject.GetComponent<Rigidbody>();
     }
 
