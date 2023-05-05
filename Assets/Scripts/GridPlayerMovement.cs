@@ -44,11 +44,11 @@ public class GridPlayerMovement : MonoBehaviour
         tileValues.Add((3, 3), (0.29f, 0.001f));
         tileValues.Add((3, 4), (0.29f, -0.1194f));
 
-        tileValues.Add((4, 1), (0.418f, 0.368f));
-        tileValues.Add((4, 2), (0.418f, 0.245f));
-        tileValues.Add((4, 3), (0.418f, 0.122f));
-        tileValues.Add((4, 4), (0.418f, 0.001f));
-        tileValues.Add((4, 5), (0.418f, -0.1194f));
+        tileValues.Add((4, 0), (0.418f, 0.368f));
+        tileValues.Add((4, 1), (0.418f, 0.245f));
+        tileValues.Add((4, 2), (0.418f, 0.122f));
+        tileValues.Add((4, 3), (0.418f, 0.001f));
+        tileValues.Add((4, 4), (0.418f, -0.1194f));
 
         tileValues.Add((5, 0), (0.546f, 0.368f));
         tileValues.Add((5, 1), (0.546f, 0.245f));
@@ -75,7 +75,7 @@ public class GridPlayerMovement : MonoBehaviour
         tileValues.Add((8, 4), (0.929f, -0.1194f));
 
         (world_x, world_z) = tileValues[(curr_x, curr_z)];
-        cube.transform.position = new Vector3(world_x, 0, world_z);
+        cube.transform.localPosition = new Vector3(world_x, 0.19f, world_z);
     }
 
     void Update()
@@ -87,12 +87,12 @@ public class GridPlayerMovement : MonoBehaviour
                 if (tileValues.ContainsKey((test_left, curr_z)))
                 {
                     curr_x--;
-                    Debug.Log("curr: " + curr_x + "," + curr_z);
                     (world_x, world_z) = tileValues[(curr_x, curr_z)];
-                    cube.transform.position = new Vector3(world_x, 0, world_z);
-                } else
+                    cube.transform.localPosition = new Vector3(world_x, 0.19f, world_z);
+                }
+                else
                 {
-                    Debug.Log("Can't move left");
+                    //Debug.Log("Can't move left");
                 }
                 break;
             case "right":
@@ -100,13 +100,12 @@ public class GridPlayerMovement : MonoBehaviour
                 if (tileValues.ContainsKey((test_right, curr_z)))
                 {
                     curr_x++;
-                    Debug.Log("curr: " + curr_x + "," + curr_z);
                     (world_x, world_z) = tileValues[(curr_x, curr_z)];
-                    cube.transform.position = new Vector3(world_x, 0, world_z);
+                    cube.transform.localPosition = new Vector3(world_x, 0.19f, world_z);
                 }
                 else
                 {
-                    Debug.Log("Can't move right");
+                    //Debug.Log("Can't move right");
                 }
                 break;
             case "up":
@@ -114,13 +113,12 @@ public class GridPlayerMovement : MonoBehaviour
                 if (tileValues.ContainsKey((curr_x, test_up)))
                 {
                     curr_z--;
-                    Debug.Log("curr: " + curr_x + "," + curr_z);
                     (world_x, world_z) = tileValues[(curr_x, curr_z)];
-                    cube.transform.position = new Vector3(world_x, 0, world_z);
+                    cube.transform.localPosition = new Vector3(world_x, 0.19f, world_z);
                 }
                 else
                 {
-                    Debug.Log("Can't move up");
+                    //Debug.Log("Can't move up");
                 }
                 break;
             case "down":
@@ -128,13 +126,12 @@ public class GridPlayerMovement : MonoBehaviour
                 if (tileValues.ContainsKey((curr_x, test_down)))
                 {
                     curr_z++;
-                    Debug.Log("curr: " + curr_x + "," + curr_z);
                     (world_x, world_z) = tileValues[(curr_x, curr_z)];
-                    cube.transform.position = new Vector3(world_x, 0, world_z);
+                    cube.transform.localPosition = new Vector3(world_x, 0.19f, world_z);
                 }
                 else
                 {
-                    Debug.Log("Can't move down");
+                    //Debug.Log("Can't move down");
                 }
                 break;
         }
@@ -145,24 +142,20 @@ public class GridPlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            Debug.Log("Left arrow is pressed");
             return "left";
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            Debug.Log("Right arrow is pressed");
             return "right";
 
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            Debug.Log("Up arrow is pressed");
             return "up";
 
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            Debug.Log("Down arrow is pressed");
             return "down";
         }
             return ""; 
