@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class GridPlayerMovement : MonoBehaviour
 {
-    Rigidbody cube;
-    //GameObject cube; 
+    public GameObject cube; 
     public Transform cam;
 
     public float speed = 5f;
@@ -75,7 +74,6 @@ public class GridPlayerMovement : MonoBehaviour
         tileValues.Add((8, 3), (0.929f, 0.001f));
         tileValues.Add((8, 4), (0.929f, -0.1194f));
 
-        cube = gameObject.GetComponent<Rigidbody>();
         (world_x, world_z) = tileValues[(curr_x, curr_z)];
         cube.transform.position = new Vector3(world_x, 0, world_z);
     }
@@ -85,55 +83,58 @@ public class GridPlayerMovement : MonoBehaviour
         switch (FindKeys())
         {
             case "left":
-                try
+                var test_left = curr_x - 1;
+                if (tileValues.ContainsKey((test_left, curr_z)))
                 {
-                    Debug.Log("curr:" + curr_x + "" + curr_z);
-                    curr_x += 1;
-                    (world_x, world_z) = tileValues[(curr_x,curr_z)];
+                    curr_x--;
+                    Debug.Log("curr: " + curr_x + "," + curr_z);
+                    (world_x, world_z) = tileValues[(curr_x, curr_z)];
                     cube.transform.position = new Vector3(world_x, 0, world_z);
-                }
-                catch
+                } else
                 {
-                    Debug.Log("Can not move left"); 
+                    Debug.Log("Can't move left");
                 }
                 break;
             case "right":
-                try
+                var test_right = curr_x + 1;
+                if (tileValues.ContainsKey((test_right, curr_z)))
                 {
-                    Debug.Log("curr:" + curr_x + "" + curr_z);
-                    curr_x -= 1;
+                    curr_x++;
+                    Debug.Log("curr: " + curr_x + "," + curr_z);
                     (world_x, world_z) = tileValues[(curr_x, curr_z)];
-                    cube.transform.position = new Vector3(world_x, 0, world_z); 
+                    cube.transform.position = new Vector3(world_x, 0, world_z);
                 }
-                catch
+                else
                 {
-                    Debug.Log("Can not move right");
+                    Debug.Log("Can't move right");
                 }
                 break;
             case "up":
-                try
+                var test_up = curr_z - 1;
+                if (tileValues.ContainsKey((curr_x, test_up)))
                 {
-                    Debug.Log("curr:" + curr_x + "" + curr_z);
-                    curr_z += 1;
+                    curr_z--;
+                    Debug.Log("curr: " + curr_x + "," + curr_z);
                     (world_x, world_z) = tileValues[(curr_x, curr_z)];
                     cube.transform.position = new Vector3(world_x, 0, world_z);
                 }
-                catch
+                else
                 {
-                    Debug.Log("Can not move up");
+                    Debug.Log("Can't move up");
                 }
                 break;
             case "down":
-                try
+                var test_down = curr_z + 1;
+                if (tileValues.ContainsKey((curr_x, test_down)))
                 {
-                    Debug.Log("curr:" + curr_x + "" + curr_z);
-                    curr_z -= 1;
+                    curr_z++;
+                    Debug.Log("curr: " + curr_x + "," + curr_z);
                     (world_x, world_z) = tileValues[(curr_x, curr_z)];
                     cube.transform.position = new Vector3(world_x, 0, world_z);
                 }
-                catch
+                else
                 {
-                    Debug.Log("Can not move down");
+                    Debug.Log("Can't move down");
                 }
                 break;
         }
@@ -162,7 +163,7 @@ public class GridPlayerMovement : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             Debug.Log("Down arrow is pressed");
-            return "Down";
+            return "down";
         }
             return ""; 
     }
